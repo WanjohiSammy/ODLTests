@@ -4,6 +4,11 @@ using ODLTests;
 
 var castFilterQueries = new[]
 {
+    "cast(ID, edm.int64) eq 'blue'",
+    "cast(ID, 'edm.int64') lt 10",
+    "cast(ID, 'Edm.Int64') lt 10",
+    "cast(ID, 'Edm.Int64') lt 10",
+    "cast(FavoriteColor, edm.string) eq 'blue'",
     "cast(FavoriteColor, edm.string) eq 'blue'",
     "cast(FavoriteColor, 'edm.string') eq 'blue'",
     "cast(FavoriteColor, Edm.String) eq 'blue'",
