@@ -36,6 +36,9 @@ static void CastFunctionWorksWithNoSingleQuotesOnType(string filterQuery)
 
 static FilterClause ParseFilter(string text, IEdmModel edmModel, IEdmType edmType, IEdmNavigationSource edmEntitySet = null)
 {
-    return new ODataQueryOptionParser(edmModel, edmType, edmEntitySet, new Dictionary<string, string>() { { "$filter", text } }) 
+    return new ODataQueryOptionParser(
+        edmModel, 
+        edmType, 
+        edmEntitySet, new Dictionary<string, string>() { { "$filter", text } }) 
         { Resolver = new ODataUriResolver() { EnableCaseInsensitive = false } }.ParseFilter();
 }
