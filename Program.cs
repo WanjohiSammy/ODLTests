@@ -39,6 +39,7 @@ static FilterClause ParseFilter(string text, IEdmModel edmModel, IEdmType edmTyp
     return new ODataQueryOptionParser(
         edmModel, 
         edmType, 
-        edmEntitySet, new Dictionary<string, string>() { { "$filter", text } }) 
+        edmEntitySet, 
+        new Dictionary<string, string>() { { "$filter", text } }) 
         { Resolver = new ODataUriResolver() { EnableCaseInsensitive = false } }.ParseFilter();
 }
